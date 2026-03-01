@@ -19,4 +19,4 @@ jobs:
         server: ${{ secrets.FTP_SERVER_Jagoweb }}
         username: ${{ secrets.FTP_USER_Jagoweb }}
         password: ${{ secrets.FTP_PASS_Jagoweb }}
-        server-dir: public_html/
+        server-dir: portofolio
