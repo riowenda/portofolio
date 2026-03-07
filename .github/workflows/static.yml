@@ -1,0 +1,22 @@
+name: Deploy Website
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Upload files via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.FTP_SERVER_Jagoweb }}
+        username: ${{ secrets.FTP_USER_Jagoweb }}
+        password: ${{ secrets.FTP_PASS_Jagoweb }}
+        server-dir: portofolio/
